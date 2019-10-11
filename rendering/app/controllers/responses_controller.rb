@@ -5,6 +5,8 @@ class ResponsesController < ApplicationController
   # render the data according to the name of the action
   def plain
     data = "Early bird gets the worm. But cookie taste better than worm. So me sleep in. - Cookie Monster"
+    # send_data data, disposition: 'attachment';
+    render plain: data;
   end
 
   def html
@@ -14,6 +16,9 @@ class ResponsesController < ApplicationController
                 <cite>Cookie Monster</cite>
               </body>
             </html>".html_safe
+    
+    # render html:data
+    # send_data(data, {type: })
   end
 
   def json
